@@ -1107,7 +1107,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "orange",
@@ -1148,7 +1149,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(container_memory_usage_bytes{instance=~\"$node\", name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(container_memory_usage_bytes{instance=~\"$node\", name=~\".+\"}) by (name)",
           "instant": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -1207,7 +1208,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "orange",
@@ -1248,7 +1250,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(container_memory_cache{instance=~\"$node\", name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(container_memory_cache{instance=~\"$node\", name=~\".+\"}) by (name)",
           "instant": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -1307,7 +1309,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "orange",
@@ -1348,7 +1351,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$node\", name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$node\", name=~\".+\"}[5m])) by (name)",
           "instant": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -1407,7 +1410,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "orange",
@@ -1448,7 +1452,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"$node\", name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"$node\", name=~\".+\"}[5m])) by (name) ",
           "instant": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -1602,6 +1606,6 @@
   "timezone": "",
   "title": "Docker Swarm Metrics",
   "uid": "a008cb3a-e1b1-4352-8f17-31101f0251e4",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }

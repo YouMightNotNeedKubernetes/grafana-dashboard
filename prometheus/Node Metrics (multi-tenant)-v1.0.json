@@ -906,7 +906,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "5s",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],
@@ -915,7 +915,7 @@
       {
         "current": {
           "selected": false,
-          "text": "hrm-dev",
+          "text": "hrm",
           "value": "bae7b229-a1c7-4c87-b293-ff7a8bd2054d"
         },
         "hide": 0,
@@ -933,8 +933,8 @@
       {
         "current": {
           "selected": false,
-          "text": "node-exporter",
-          "value": "node-exporter"
+          "text": "promstack/node-exporter",
+          "value": "promstack/node-exporter"
         },
         "datasource": {
           "type": "prometheus",
@@ -960,8 +960,8 @@
       {
         "current": {
           "selected": false,
-          "text": "hrm-dev",
-          "value": "hrm-dev"
+          "text": "hrm",
+          "value": "hrm"
         },
         "datasource": {
           "type": "prometheus",
@@ -970,12 +970,39 @@
         "definition": "label_values(cluster)",
         "hide": 0,
         "includeAll": false,
-        "label": "Cluster",
+        "label": "",
         "multi": false,
         "name": "cluster",
         "options": [],
         "query": {
           "query": "label_values(cluster)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "dev",
+          "value": "dev"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "definition": "label_values(environment)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "environment",
+        "options": [],
+        "query": {
+          "query": "label_values(environment)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -994,14 +1021,14 @@
           "type": "prometheus",
           "uid": "$datasource"
         },
-        "definition": "label_values(node_exporter_build_info{cluster=\"$cluster\"},instance)",
+        "definition": "label_values(node_exporter_build_info{environment=\"$environment\"},instance)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "instance",
         "options": [],
         "query": {
-          "query": "label_values(node_exporter_build_info{cluster=\"$cluster\"},instance)",
+          "query": "label_values(node_exporter_build_info{environment=\"$environment\"},instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 2,
@@ -1047,6 +1074,6 @@
   "timezone": "browser",
   "title": "Node Metrics (multi-tenant)",
   "uid": "b4a39d7b-c2e9-4d27-97b7-fc1ae7868771",
-  "version": 2,
+  "version": 7,
   "weekStart": ""
 }

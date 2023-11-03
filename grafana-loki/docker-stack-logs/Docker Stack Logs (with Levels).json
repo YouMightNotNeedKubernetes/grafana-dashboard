@@ -88,7 +88,7 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -98,7 +98,7 @@
         "x": 0,
         "y": 1
       },
-      "id": 5,
+      "id": 4,
       "options": {
         "legend": {
           "calcs": [],
@@ -118,8 +118,8 @@
             "uid": "${datasource}"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "sum by(container) (container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"})",
+          "editorMode": "code",
+          "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"}[5m])) * 100",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -129,7 +129,7 @@
           "useBackend": false
         }
       ],
-      "title": "working set",
+      "title": "cpu",
       "type": "timeseries"
     },
     {
@@ -187,7 +187,7 @@
               }
             ]
           },
-          "unit": "percent"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -197,7 +197,7 @@
         "x": 6,
         "y": 1
       },
-      "id": 4,
+      "id": 5,
       "options": {
         "legend": {
           "calcs": [],
@@ -218,7 +218,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"}[5m]))",
+          "expr": "sum by(container) (container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -228,7 +228,7 @@
           "useBackend": false
         }
       ],
-      "title": "cpu",
+      "title": "working set",
       "type": "timeseries"
     },
     {

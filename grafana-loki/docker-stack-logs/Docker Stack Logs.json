@@ -118,8 +118,8 @@
             "uid": "${datasource}"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"}[5m]))",
+          "editorMode": "code",
+          "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"$pod\", container=~\"$container\"}[5m])) * 100",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,

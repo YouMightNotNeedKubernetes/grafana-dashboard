@@ -586,6 +586,7 @@
         "type": "loki",
         "uid": "${loki_datasource}"
       },
+      "description": "Log streams (newest first)",
       "gridPos": {
         "h": 21,
         "w": 24,
@@ -630,8 +631,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Prometheus",
-          "value": "fd668c6b-2927-4459-8f4f-b87533a53f27"
+          "text": "",
+          "value": ""
         },
         "hide": 0,
         "includeAll": false,
@@ -647,8 +648,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Loki",
-          "value": "fa467faf-0952-462a-be7a-b42633697404"
+          "text": "",
+          "value": ""
         },
         "hide": 0,
         "includeAll": false,
@@ -691,8 +692,8 @@
       {
         "current": {
           "selected": false,
-          "text": "grafana-loki",
-          "value": "grafana-loki"
+          "text": "",
+          "value": ""
         },
         "datasource": {
           "type": "prometheus",
@@ -805,6 +806,6 @@
   "timezone": "",
   "title": "Docker Stack Logs",
   "uid": "docker-stack-logs",
-  "version": 28,
+  "version": 34,
   "weekStart": ""
 }
